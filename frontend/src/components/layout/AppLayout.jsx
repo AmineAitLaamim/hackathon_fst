@@ -1,9 +1,10 @@
-import { Bell, Compass, Users, MapPinned } from "lucide-react";
+import { Bell, Compass, Mail, Users, MapPinned } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const navItems = [
   { to: "/explore", label: "Explore", icon: Compass },
   { to: "/friends", label: "Friends", icon: Users },
+  { to: "/invitations", label: "Invitations", icon: Mail },
   { to: "/groups", label: "Groups", icon: MapPinned },
   { to: "/notifications", label: "Notifications", icon: Bell },
 ];

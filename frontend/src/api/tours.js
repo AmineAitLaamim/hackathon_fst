@@ -9,3 +9,8 @@ export async function deleteTour(tourId) {
   const response = await apiClient.delete(`/tours/${tourId}`);
   return response.data;
 }
+
+export async function getSharedWithMeTours() {
+  const response = await apiClient.get("/tours/shared-with-me");
+  return response.data;
+}

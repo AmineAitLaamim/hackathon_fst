@@ -460,6 +460,29 @@ a {
   font-size: 1rem;
 }
 
+.card-list {
+  display: grid;
+  gap: 14px;
+}
+
+.preview-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid #e4d9ca;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.preview-card h2 {
+  margin: 4px 0 6px;
+}
+
+.preview-card p {
+  max-width: 72ch;
+}
+
 .list-row p {
   margin: 0;
 }
@@ -528,7 +551,8 @@ a {
   }
 
   .inline-form,
-  .list-row {
+  .list-row,
+  .preview-card {
     align-items: stretch;
     flex-direction: column;
   }

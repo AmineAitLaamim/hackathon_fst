@@ -225,7 +225,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - Actions: accept (`PATCH /respond`), decline, remove (`DELETE`), send request (`POST /request`)
 - `POST /friends/request` needs a `user_id` — coordinate on user discovery approach (username input or share-link with encoded ID) before implementing
 
-### `/invitations`
+### `/invitations` — Done
 - **Two calls on load:** `GET /api/invitations` + `GET /api/tours/shared-with-me`
 - Merge by `tour_id` to build preview cards (tour name, sharing friend, tour preview)
 - Actions: accept / decline → `PATCH /api/invitations/:inviteId`
