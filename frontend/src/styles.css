@@ -64,6 +64,12 @@ a {
   box-shadow: 0 14px 40px rgba(83, 61, 37, 0.08);
 }
 
+.tour-card {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
 .auth-card {
   color: #1f2933;
   padding: 24px;
@@ -228,6 +234,110 @@ a {
   line-height: 1.5;
 }
 
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.badge {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  padding: 4px 9px;
+  color: #3f342a;
+  background: #eadfce;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.badge.published {
+  color: #134e45;
+  background: #cfe8df;
+}
+
+.badge.shared {
+  color: #53389e;
+  background: #e7ddff;
+}
+
+.empty-state {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.tour-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.map-panel {
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.map-canvas,
+.map-fallback {
+  min-height: 520px;
+}
+
+.map-fallback {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  color: #4f463d;
+  background:
+    linear-gradient(90deg, rgba(185, 77, 47, 0.12) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(47, 111, 104, 0.12) 1px, transparent 1px),
+    #fffaf3;
+  background-size: 34px 34px;
+}
+
+.map-fallback p {
+  margin: 0;
+  font-weight: 800;
+}
+
+.stop-list {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.stop-list li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+}
+
+.stop-list h3,
+.stop-list p {
+  margin: 0 0 4px;
+}
+
+.stop-index {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: #b94d2f;
+  font-weight: 800;
+}
+
+.author-actions {
+  margin-top: 20px;
+}
+
 .error-box {
   border: 1px solid #e8aaa0;
   border-radius: 7px;
@@ -326,5 +436,9 @@ a {
 
   .page-header {
     display: grid;
+  }
+
+  .tour-detail-layout {
+    grid-template-columns: 1fr;
   }
 }

@@ -171,12 +171,12 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - Full-page loader with status messages during AI generation
 - `POST /api/tours/generate` → on success redirect `/tours/:id`
 
-### `/tours`
+### `/tours` — DONE
 - List sorted by date — badges: `draft / published / shared`
 - Actions per card: open, delete (confirm dialog), share (`POST /api/tours/:id/share`), start group session (`POST /api/group-tours`)
 - Load: `GET /api/tours`
 
-### `/tours/:id`
+### `/tours/:id` — DONE
 - Google Maps interactive map + ordered stop list (name, schedule, walking distance)
 - Load: `GET /api/tours/:id` — stops are embedded, no per-stop Places calls
 - Author-only actions: edit, delete (confirm), share publicly, modify share, unpublish, share with friends, start group session
