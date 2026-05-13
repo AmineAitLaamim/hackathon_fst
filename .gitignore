@@ -1,0 +1,5 @@
+backend/.venv/
+backend/__pycache__/
+backend/config/__pycache__/
+*.py[cod]
+db.sqlite3
