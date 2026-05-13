@@ -1,19 +1,38 @@
+import { Clock, Footprints, MapPin } from "lucide-react";
+
 export default function TourStopsList({ stops = [] }) {
   if (!stops.length) {
-    return <p className="helper-text">No stops are embedded in this tour yet.</p>;
+    return <div className="empty-state">No stops have been added to this tour.</div>;
   }
 
   return (
     <ol className="stop-list">
       {stops.map((stop, index) => (
-        <li key={stop.id || `${stop.name}-${index}`}>
+        <li className="stop-item" key={stop.id || stop.place_id || index}>
           <span className="stop-index">{index + 1}</span>
           <div>
             <h3>{stop.name || stop.title || `Stop ${index + 1}`}</h3>
-            <p>{stop.schedule || stop.time || stop.arrival_time || "Flexible time"}</p>
-            <p className="helper-text">
-              {stop.walking_distance || stop.distance || stop.walkingDistance || "Walking distance not specified"}
-            </p>
+            <div className="stop-meta">
+              {stop.schedule || stop.time ? (
+                <span>
+                  <Clock size={14} aria-hidden="true" />
+                  {stop.schedule || stop.time}
+                </span>
+              ) : null}
+              {stop.walking_distance || stop.distance ? (
+                <span>
+                  <Footprints size={14} aria-hidden="true" />
+                  {stop.walking_distance || stop.distance}
+                </span>
+              ) : null}
+              {stop.address ? (
+                <span>
+                  <MapPin size={14} aria-hidden="true" />
+                  {stop.address}
+                </span>
+              ) : null}
+            </div>
+            {stop.description && <p>{stop.description}</p>}
           </div>
         </li>
       ))}

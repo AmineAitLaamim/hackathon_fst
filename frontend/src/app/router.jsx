@@ -1,38 +1,28 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import AppLayout from "../components/layout/AppLayout.jsx";
-import AuthLayout from "../components/layout/AuthLayout.jsx";
-import ProtectedRoute from "../components/layout/ProtectedRoute.jsx";
-import LoginPage from "../pages/auth/LoginPage.jsx";
-import OnboardingPage from "../pages/auth/OnboardingPage.jsx";
-import RegisterPage from "../pages/auth/RegisterPage.jsx";
-import ProfilePage from "../pages/profile/ProfilePage.jsx";
-import GenerateTourPage from "../pages/tours/GenerateTourPage.jsx";
-import TourDetailPage from "../pages/tours/TourDetailPage.jsx";
-import ToursPage from "../pages/tours/ToursPage.jsx";
+import App from "../App.jsx";
+import ExplorePage from "../pages/social/ExplorePage.jsx";
+import ExploreDetailPage from "../pages/social/ExploreDetailPage.jsx";
+import PersonalizeTourPage from "../pages/social/PersonalizeTourPage.jsx";
+import FriendsPage from "../pages/social/FriendsPage.jsx";
+import InvitationsPage from "../pages/social/InvitationsPage.jsx";
+import GroupsPage from "../pages/groups/GroupsPage.jsx";
+import GroupSessionPage from "../pages/groups/GroupSessionPage.jsx";
+import NotificationsPage from "../pages/social/NotificationsPage.jsx";
 
 export const router = createBrowserRouter([
   {
-    element: <AuthLayout />,
+    path: "/",
+    element: <App />,
     children: [
-      { path: "/login", element: <LoginPage /> },
-      { path: "/register", element: <RegisterPage /> },
+      { index: true, element: <Navigate to="/explore" replace /> },
+      { path: "explore", element: <ExplorePage /> },
+      { path: "explore/:shareId", element: <ExploreDetailPage /> },
+      { path: "tours/personalize/:shareId", element: <PersonalizeTourPage /> },
+      { path: "friends", element: <FriendsPage /> },
+      { path: "invitations", element: <InvitationsPage /> },
+      { path: "groups", element: <GroupsPage /> },
+      { path: "group/:id", element: <GroupSessionPage /> },
+      { path: "notifications", element: <NotificationsPage /> },
     ],
   },
-  {
-    element: <ProtectedRoute />,
-    children: [
-      {
-        element: <AppLayout />,
-        children: [
-          { path: "/onboarding", element: <OnboardingPage /> },
-          { path: "/generate", element: <GenerateTourPage /> },
-          { path: "/tours", element: <ToursPage /> },
-          { path: "/tours/:id", element: <TourDetailPage /> },
-          { path: "/profile", element: <ProfilePage /> },
-        ],
-      },
-    ],
-  },
-  { path: "/", element: <Navigate to="/tours" replace /> },
-  { path: "*", element: <Navigate to="/tours" replace /> },
 ]);

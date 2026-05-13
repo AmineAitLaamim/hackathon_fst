@@ -1,34 +1,29 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { useAuth } from "../../features/auth/useAuth.js";
+import { Bell, Compass, Mail, Users, MapPinned } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
-export default function AppLayout() {
-  const navigate = useNavigate();
-  const { logout, user } = useAuth();
+const navItems = [
+  { to: "/explore", label: "Explore", icon: Compass },
+  { to: "/friends", label: "Friends", icon: Users },
+  { to: "/invitations", label: "Invitations", icon: Mail },
+  { to: "/groups", label: "Groups", icon: MapPinned },
+  { to: "/notifications", label: "Notifications", icon: Bell },
+];
 
-  async function handleLogout() {
-    await logout();
-    navigate("/login", { replace: true });
-  }
-
+export function AppLayout({ children }) {
   return (
     <div className="app-shell">
-      <header className="topbar">
-        <NavLink to="/tours" className="brand">
-          Marrakech Tours
-        </NavLink>
-        <nav className="nav-links" aria-label="Primary navigation">
-          <NavLink to="/generate">Generate</NavLink>
-          <NavLink to="/tours">Tours</NavLink>
-          <NavLink to="/profile">Profile</NavLink>
+      <aside className="sidebar">
+        <div className="brand">Marrakech</div>
+        <nav className="nav-list" aria-label="Main navigation">
+          {navItems.map(({ to, label, icon: Icon }) => (
+            <NavLink key={to} to={to} className="nav-link">
+              <Icon size={18} aria-hidden="true" />
+              <span>{label}</span>
+            </NavLink>
+          ))}
         </nav>
-        <div className="topbar-user">
-          <span>{user?.name || user?.email || "Traveler"}</span>
-          <button className="ghost-button" type="button" onClick={handleLogout}>
-            Logout
-          </button>
-        </div>
-      </header>
-      <Outlet />
+      </aside>
+      <main className="main-content">{children}</main>
     </div>
   );
 }
