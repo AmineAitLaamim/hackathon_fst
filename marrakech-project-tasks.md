@@ -8,9 +8,9 @@
 
 A tourism application for Marrakech that lets users:
 
-- Generate personalized AI tours based on their profile, health conditions, and interests
-- Browse and use public tours shared by other users, with ratings and AI personalization
-- Share tours privately with friends and explore them together in live group sessions
+- Generate personalized AI tours based on their profile, health conditions, and interests.
+- Browse and use public tours shared by other users, with ratings and AI personalization.
+- Share tours privately with friends and explore them together in live group sessions.
 
 ---
 
@@ -31,48 +31,11 @@ A tourism application for Marrakech that lets users:
 
 **Modules: Auth, Users, Tours AI, Places**
 
-### Auth Module
-
-| Method | Route | Notes |
-|--------|-------|-------|
-| POST | `/api/auth/register` | Create account, return JWT tokens `[done]` |
-| POST | `/api/auth/login` | Validate credentials, issue access + refresh tokens `[done]` |
-| POST | `/api/auth/logout` | Blacklist refresh token (`BLACKLIST_AFTER_ROTATION = True`) `[done]` |
-| POST | `/api/auth/refresh` | Issue new access token `[done]` |
-| GET | `/api/auth/me` | Current user profile `[done]` |
-| PATCH | `/api/auth/me` | Partial update - name, avatar `[done]` |
-
-### User Profile
-
-| Method | Route | Notes |
-|--------|-------|-------|
-| GET | `/api/users/:id` | Public profile `[done]` |
-| PATCH | `/api/users/:id/interests` | Partial update, do not wipe existing interests `[done]` |
-| PATCH | `/api/users/:id/health` | Partial update, do not wipe existing conditions `[done]` |
-
-### Tour Planner AI
-
-| Method | Route | Notes |
-|--------|-------|-------|
-| POST | `/api/tours/generate` | Call Claude with `{ duration, budget, themes, notes }` + user context `[done]` |
-| GET | `/api/tours` | List user's tours, sorted by date, with `draft/published/shared` badge `[done]` |
-| GET | `/api/tours/shared-with-me` | Tours shared privately with me `[done]` |
-| GET | `/api/tours/:id` | Tour detail with embedded stops `[done]` |
-| PUT | `/api/tours/:id` | Replace tour `[done]` |
-| PATCH | `/api/tours/:id` | Partial update `[done]` |
-| DELETE | `/api/tours/:id` | Delete tour `[done]` |
-| POST | `/api/tours/:id/invitations` | Share privately with friends `[done]` |
-| POST | `/api/tours/:id/share` | Publish publicly `[done]` |
-| PATCH | `/api/tours/:id/share` | Update share settings `[done]` |
-| DELETE | `/api/tours/:id/share` | Unpublish and revert to draft `[done]` |
-
-### Map & Places
-
-| Method | Route | Notes |
-|--------|-------|-------|
-| GET | `/api/places` | List POIs with filters `[done]` |
-| GET | `/api/places/categories` | `@action(detail=False)` `[done]` |
-| GET | `/api/places/:id` | Place detail `[done]` |
+- Auth endpoints `[done]`
+- User profile endpoints `[done]`
+- Tour planner AI endpoints `[done]`
+- Places endpoints `[done]`
+- JWT, token blacklist, protected routes, and Claude context wiring `[done]`
 
 **19 endpoints**
 
@@ -82,58 +45,11 @@ A tourism application for Marrakech that lets users:
 
 **Modules: Friends, Invitations, Shared Tours, Group Tours, Notifications**
 
-### Friends
-
-| Method | Route | Notes |
-|--------|-------|-------|
-| POST | `/api/friends/request` | Body: `{ "user_id": "..." }` |
-| PATCH | `/api/friends/:id/respond` | Body: `{ status: "accepted" | "declined" }` |
-| DELETE | `/api/friends/:id` | Remove friend |
-| GET | `/api/friends` | List accepted friends |
-| GET | `/api/friends/requests` | `?type=incoming|outgoing`, `@action(detail=False)` |
-
-### Invitations
-
-| Method | Route | Notes |
-|--------|-------|-------|
-| GET | `/api/invitations` | Pending invitations received |
-| PATCH | `/api/invitations/:inviteId` | Accept or decline |
-
-### Shared Tours
-
-| Method | Route | Notes |
-|--------|-------|-------|
-| GET | `/api/shared-tours` | Browse public tours, `?sort=rating|recent&page=` |
-| GET | `/api/shared-tours/:shareId` | Public tour detail with stops + average rating |
-| GET | `/api/shared-tours/:shareId/rate/me` | My rating, 404 if none |
-| POST | `/api/shared-tours/:shareId/rate` | Submit rating + optional comment |
-| PUT | `/api/shared-tours/:shareId/rate` | Update rating |
-| DELETE | `/api/shared-tours/:shareId/rate` | Remove rating |
-| POST | `/api/shared-tours/:shareId/use` | Clone into user's tours |
-| POST | `/api/shared-tours/:shareId/personalize` | AI re-personalize, auto-save as `draft` |
-
-### Group / Collab Tours
-
-| Method | Route | Notes |
-|--------|-------|-------|
-| POST | `/api/group-tours` | Create session |
-| GET | `/api/group-tours` | List sessions |
-| GET | `/api/group-tours/:id` | Session detail + members + live status |
-| DELETE | `/api/group-tours/:id` | Disband |
-| POST | `/api/group-tours/:id/invite` | Invite friends |
-| POST | `/api/group-tours/:id/join` | Join via invite |
-| POST | `/api/group-tours/:id/leave` | Leave |
-| POST | `/api/group-tours/:id/stops/:stopId/checkin` | Check in at stop |
-| POST | `/api/group-tours/:id/stops/:stopId/comments` | Post comment |
-| DELETE | `/api/group-tours/:id/stops/:stopId/comments/:commentId` | Delete own comment |
-| GET | `/api/group-tours/:id/activity` | Live activity feed |
-
-### Notifications
-
-| Method | Route | Notes |
-|--------|-------|-------|
-| GET | `/api/notifications` | Paginated list |
-| POST | `/api/notifications/:id/read` | Mark as read |
+- Friends endpoints `[done]`
+- Invitations endpoints `[done]`
+- Shared tours and ratings endpoints `[done]`
+- Group tour session endpoints `[done]`
+- Notifications endpoints `[done]`
 
 **21 endpoints**
 
