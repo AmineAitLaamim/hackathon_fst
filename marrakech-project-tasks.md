@@ -126,7 +126,7 @@ A tourism application for Marrakech that lets users:
 | DELETE | `/api/group-tours/:id/stops/:stopId/comments/:commentId` | Delete own comment |
 | GET | `/api/group-tours/:id/activity` | Live activity feed — polled by client every 3–5s |
 
-### Notifications
+### Notifications (DONE)
 | Method | Route | Notes |
 |--------|-------|-------|
 | GET | `/api/notifications` | Paginated — `?page=&limit=` |
