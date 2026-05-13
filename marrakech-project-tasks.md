@@ -111,7 +111,7 @@ A tourism application for Marrakech that lets users:
 | POST | `/api/shared-tours/:shareId/use` | Clone into user's tours |
 | POST | `/api/shared-tours/:shareId/personalize` | AI re-personalize → auto-save as `draft` → return `{ tour_id, status: 'draft' }` |
 
-### Group / Collab Tours
+### Group / Collab Tours (DONE)
 | Method | Route | Notes |
 |--------|-------|-------|
 | POST | `/api/group-tours` | Create session — body: `{ tour_id }` |

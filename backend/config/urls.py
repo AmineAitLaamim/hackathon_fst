@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/friends/', include('friends.urls')),
     path('api/invitations/', include('invitations.urls')),
     path('api/shared-tours/', include('shared_tours.urls')),
+    path('api/group-tours/', include('group_tours.urls')),
 ]
