@@ -1,5 +1,4 @@
 import { createContext, useCallback, useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { fetchCurrentUser, loginUser, logoutUser, registerUser } from "../../api/auth.js";
 import { registerSessionExpiredHandler } from "../../api/client.js";
 import { clearAccessToken, getAccessToken, setAccessToken } from "./tokenStore.js";

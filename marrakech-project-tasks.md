@@ -150,12 +150,12 @@ Response interceptor:
 ```
 Implement at app initialisation. Access token lives **in memory only** — never localStorage.
 
-### `/login`
+### `/login` — DONE
 - Fields: Email · Password
 - `POST /api/auth/login` → store access token in memory → redirect `/tours`
 - Link to `/register`
 
-### `/register`
+### `/register` — DONE
 - Fields: Name · Email · Password
 - `POST /api/auth/register` → redirect `/onboarding`
 
