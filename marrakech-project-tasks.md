@@ -219,7 +219,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - Confirm: `PATCH /api/tours/:id` `{ status: 'published' }` using stored `tour_id`
 - Discard: `DELETE /api/tours/:id` (confirm dialog) using stored `tour_id`
 
-### `/friends`
+### `/friends` — Done
 - 2 tabs: accepted friends / pending requests
 - Load: `GET /api/friends` + `GET /api/friends/requests?type=incoming` + `?type=outgoing`
 - Actions: accept (`PATCH /respond`), decline, remove (`DELETE`), send request (`POST /request`)
