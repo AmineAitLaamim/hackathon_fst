@@ -18,7 +18,7 @@ A tourism application for Marrakech that lets users:
 
 - Access token stored **in memory** (never localStorage) — refresh token in `httpOnly` cookie
 - Global Axios interceptor: on 401 → `POST /api/auth/refresh` → retry → on fail → redirect `/login`
-- AI endpoints call `claude-sonnet-4-20250514` with user profile + health + interests as context
+- AI endpoints call `claude-sonnet-4-20250514` with user profile + health + interests as context via `ANTHROPIC_API_KEY`
 - Stop detail data is **embedded in the tour object** — no per-stop Places calls in v1
 - `shareId` is separate from `tourId` so sharing can be revoked without deleting the original tour
 - `/personalize` always saves as `draft` first — nothing is finalized silently
