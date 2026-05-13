@@ -202,7 +202,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - [x] Card fields: name, author, average rating, stop count
 - [x] Load: `GET /api/shared-tours?sort=rating|recent&page=`
 
-### `/explore/:shareId`
+### `/explore/:shareId` — Done
 - Google Maps + stops + overall rating
 - Load: `GET /api/shared-tours/:shareId` + `GET /api/shared-tours/:shareId/rate/me`
 - **Rating block — 3-state logic:**
