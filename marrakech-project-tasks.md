@@ -235,7 +235,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - Quick access to active session
 - Secondary CTA: create session → `POST /api/group-tours { tour_id }`
 
-### `/group/:id` — Live session 🔴
+### `/group/:id` — Live session 🔴 — Done
 - **Desktop:** 2 columns — Google Maps + sidebar (online members · activity feed · check-in)
 - **Mobile:** 3 tabs — Map / Activity / Members
 - Header: permanent `● Live` indicator

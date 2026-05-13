@@ -6,6 +6,7 @@ import PersonalizeTourPage from "../pages/social/PersonalizeTourPage.jsx";
 import FriendsPage from "../pages/social/FriendsPage.jsx";
 import InvitationsPage from "../pages/social/InvitationsPage.jsx";
 import GroupsPage from "../pages/groups/GroupsPage.jsx";
+import GroupSessionPage from "../pages/groups/GroupSessionPage.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
       { path: "friends", element: <FriendsPage /> },
       { path: "invitations", element: <InvitationsPage /> },
       { path: "groups", element: <GroupsPage /> },
+      { path: "group/:id", element: <GroupSessionPage /> },
     ],
   },
 ]);
