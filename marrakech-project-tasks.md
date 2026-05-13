@@ -51,17 +51,17 @@ A tourism application for Marrakech that lets users:
 ### Tour Planner AI
 | Method | Route | Notes |
 |--------|-------|-------|
-| POST | `/api/tours/generate` | Call Claude with `{ duration, budget, themes, notes }` + user profile/health/interests — `@action(detail=False)` |
-| GET | `/api/tours` | List user's tours, sorted by date, with `draft/published/shared` badge |
-| GET | `/api/tours/shared-with-me` | Tours shared privately with me — `@action(detail=False)` |
-| GET | `/api/tours/:id` | Tour detail with embedded stops |
-| PUT | `/api/tours/:id` | Replace tour |
-| PATCH | `/api/tours/:id` | Partial update |
-| DELETE | `/api/tours/:id` | Delete tour |
-| POST | `/api/tours/:id/invitations` | Share privately — body: `{ "friend_ids": [...] }` |
-| POST | `/api/tours/:id/share` | Publish publicly |
-| PATCH | `/api/tours/:id/share` | Update share settings |
-| DELETE | `/api/tours/:id/share` | Unpublish — revert to draft |
+| POST | `/api/tours/generate` | Call Claude with `{ duration, budget, themes, notes }` + user profile/health/interests — `@action(detail=False)` `[done]` |
+| GET | `/api/tours` | List user's tours, sorted by date, with `draft/published/shared` badge `[done]` |
+| GET | `/api/tours/shared-with-me` | Tours shared privately with me — `@action(detail=False)` `[done]` |
+| GET | `/api/tours/:id` | Tour detail with embedded stops `[done]` |
+| PUT | `/api/tours/:id` | Replace tour `[done]` |
+| PATCH | `/api/tours/:id` | Partial update `[done]` |
+| DELETE | `/api/tours/:id` | Delete tour `[done]` |
+| POST | `/api/tours/:id/invitations` | Share privately — body: `{ "friend_ids": [...] }` `[done]` |
+| POST | `/api/tours/:id/share` | Publish publicly `[done]` |
+| PATCH | `/api/tours/:id/share` | Update share settings `[done]` |
+| DELETE | `/api/tours/:id/share` | Unpublish — revert to draft `[done]` |
 
 ### Map & Places *(backend-only in v1 — not called directly by frontend)*
 | Method | Route | Notes |
