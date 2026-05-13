@@ -159,7 +159,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - Fields: Name · Email · Password
 - `POST /api/auth/register` → redirect `/onboarding`
 
-### `/onboarding` — 3-step wizard
+### `/onboarding` — 3-step wizard — DONE
 - Progress bar across steps; shown once after registration
 - Step 1 — Profile: name, photo → `PATCH /api/auth/me`
 - Step 2 — Interests: multi-select (souks, food, histoire…) → `PATCH /api/users/:id/interests`

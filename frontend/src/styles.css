@@ -139,6 +139,10 @@ a {
   padding: 22px;
 }
 
+.narrow-page {
+  width: min(760px, calc(100% - 32px));
+}
+
 .form-stack {
   display: grid;
   gap: 16px;
@@ -226,6 +230,34 @@ a {
   padding: 10px 12px;
   color: #7d211b;
   background: #fff0ed;
+}
+
+.progress-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eadfce;
+}
+
+.progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #b94d2f;
+  transition: width 180ms ease;
+}
+
+.chip {
+  background: #fffdf9;
+  border-color: #d8cbbb;
+  color: #53463a;
+  text-transform: capitalize;
+}
+
+.chip.selected {
+  color: white;
+  background: #2f6f68;
+  border-color: #2f6f68;
 }
 
 .screen-message {
