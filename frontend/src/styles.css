@@ -573,6 +573,10 @@ a {
   margin: 0;
 }
 
+.list-row.unread {
+  border-left: 4px solid #d6533f;
+}
+
 @keyframes loading-slide {
   from {
     transform: translateX(-100%);

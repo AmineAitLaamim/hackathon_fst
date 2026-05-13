@@ -244,7 +244,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - Members: join (`POST /join`), leave (`POST /leave`)
 - All: check in (`POST /checkin`), post comment, delete own comment (long-press mobile / trash icon desktop)
 
-### `/notifications`
+### `/notifications` — Done
 - Paginated list — types: friend request · tour invitation · group check-in
 - Load: `GET /api/notifications?page=`
 - Action: mark as read → `POST /api/notifications/:id/read`

@@ -7,6 +7,7 @@ import FriendsPage from "../pages/social/FriendsPage.jsx";
 import InvitationsPage from "../pages/social/InvitationsPage.jsx";
 import GroupsPage from "../pages/groups/GroupsPage.jsx";
 import GroupSessionPage from "../pages/groups/GroupSessionPage.jsx";
+import NotificationsPage from "../pages/social/NotificationsPage.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: "invitations", element: <InvitationsPage /> },
       { path: "groups", element: <GroupsPage /> },
       { path: "group/:id", element: <GroupSessionPage /> },
+      { path: "notifications", element: <NotificationsPage /> },
     ],
   },
 ]);
