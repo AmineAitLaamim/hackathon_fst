@@ -104,6 +104,10 @@ a {
   flex-wrap: wrap;
 }
 
+.two-columns > * {
+  flex: 1 1 220px;
+}
+
 .nav-links a {
   padding: 8px 10px;
   border-radius: 6px;
@@ -258,6 +262,36 @@ a {
   color: white;
   background: #2f6f68;
   border-color: #2f6f68;
+}
+
+.ai-loader {
+  min-height: calc(100vh - 69px);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 32px;
+  text-align: center;
+}
+
+.ai-loader h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.loader-mark {
+  width: 56px;
+  height: 56px;
+  border: 5px solid #eadfce;
+  border-top-color: #b94d2f;
+  border-radius: 50%;
+  animation: spin 900ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .screen-message {

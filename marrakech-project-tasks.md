@@ -166,7 +166,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - Step 3 — Health: conditions + reassuring message → `PATCH /api/users/:id/health`
 - On complete → redirect `/generate`
 
-### `/generate`
+### `/generate` — DONE
 - Fields: duration, budget, themes, free-text textarea
 - Full-page loader with status messages during AI generation
 - `POST /api/tours/generate` → on success redirect `/tours/:id`
