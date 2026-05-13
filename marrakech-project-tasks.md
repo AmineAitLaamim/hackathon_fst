@@ -99,7 +99,7 @@ A tourism application for Marrakech that lets users:
 | GET | `/api/invitations` | Pending invitations received |
 | PATCH | `/api/invitations/:inviteId` | Accept or decline |
 
-### Shared Tours
+### Shared Tours (DONE)
 | Method | Route | Notes |
 |--------|-------|-------|
 | GET | `/api/shared-tours` | Browse all public tours — `?sort=rating\|recent&page=` |

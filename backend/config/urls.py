@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/friends/', include('friends.urls')),
     path('api/invitations/', include('invitations.urls')),
+    path('api/shared-tours/', include('shared_tours.urls')),
 ]
