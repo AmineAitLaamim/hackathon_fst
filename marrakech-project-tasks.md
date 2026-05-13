@@ -66,15 +66,15 @@ A tourism application for Marrakech that lets users:
 ### Map & Places *(backend-only in v1 — not called directly by frontend)*
 | Method | Route | Notes |
 |--------|-------|-------|
-| GET | `/api/places` | List POIs with filters |
-| GET | `/api/places/categories` | `@action(detail=False)` |
-| GET | `/api/places/:id` | Place detail |
+| GET | `/api/places` | List POIs with filters `[done]` |
+| GET | `/api/places/categories` | `@action(detail=False)` `[done]` |
+| GET | `/api/places/:id` | Place detail `[done]` |
 
 ### Setup responsibilities
-- `simplejwt` with token blacklist
-- `@action(detail=False)` on `generate` and `shared-with-me` — declared before `/:id` lookup
-- All protected routes: `Authorization: Bearer <access_token>`
-- Health conditions passed to Claude to filter inaccessible or unsuitable stops
+- `simplejwt` with token blacklist `[done]`
+- `@action(detail=False)` on `generate` and `shared-with-me` — declared before `/:id` lookup `[done]`
+- All protected routes: `Authorization: Bearer <access_token>` `[done]`
+- Health conditions passed to Claude to filter inaccessible or unsuitable stops `[done]`
 
 **19 endpoints**
 
