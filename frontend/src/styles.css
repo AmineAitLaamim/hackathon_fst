@@ -57,10 +57,14 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 100%;
   min-height: 42px;
   padding: 10px 12px;
+  border: 0;
   border-radius: 8px;
+  background: transparent;
   color: #d9e2ea;
+  text-align: left;
 }
 
 .nav-link.active,
@@ -69,9 +73,97 @@ a {
   color: #fff;
 }
 
+.nav-button {
+  margin-top: 10px;
+}
+
 .main-content {
   padding: 32px;
   min-width: 0;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(32, 38, 47, 0.88), rgba(214, 83, 63, 0.7)),
+    url("/src/assets/marrakech-pattern.svg");
+}
+
+.auth-panel {
+  width: min(960px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  gap: 28px;
+  align-items: center;
+}
+
+.auth-intro {
+  color: #fff;
+}
+
+.auth-intro .eyebrow {
+  color: #f5bb57;
+}
+
+.auth-intro h1 {
+  margin: 8px 0 0;
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  line-height: 0.96;
+}
+
+.auth-card {
+  background: #fff;
+  border: 1px solid #e4d9ca;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 18px 42px rgba(32, 38, 47, 0.22);
+}
+
+.auth-card h2 {
+  margin: 4px 0 0;
+  font-size: 1.8rem;
+}
+
+.form-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+  font-weight: 700;
+}
+
+.field input {
+  min-height: 42px;
+  border: 1px solid #d7c9b8;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fff;
+  color: #1d2430;
+}
+
+.helper-text {
+  margin: 0;
+  color: #65717e;
+}
+
+.helper-text a {
+  color: #b24734;
+  font-weight: 800;
+}
+
+.screen-message {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #53606d;
+  font-weight: 800;
 }
 
 .page-stack {
@@ -615,8 +707,25 @@ a {
     display: none;
   }
 
+  .nav-link {
+    width: auto;
+  }
+
+  .nav-button {
+    margin-top: 0;
+  }
+
   .main-content {
     padding: 20px;
+  }
+
+  .auth-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-intro h1 {
+    max-width: 14ch;
+    font-size: 2.4rem;
   }
 
   .page-header {

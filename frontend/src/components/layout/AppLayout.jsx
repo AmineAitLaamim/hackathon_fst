@@ -1,5 +1,6 @@
-import { Bell, Compass, Mail, Users, MapPinned } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { Bell, Compass, LogOut, Mail, MapPinned, Users } from "lucide-react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../../features/auth/useAuth.js";
 
 const navItems = [
   { to: "/explore", label: "Explore", icon: Compass },
@@ -10,6 +11,14 @@ const navItems = [
 ];
 
 export function AppLayout({ children }) {
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+
+  async function handleLogout() {
+    await logout();
+    navigate("/login", { replace: true });
+  }
+
   return (
     <div className="app-shell">
       <aside className="sidebar">
@@ -21,6 +30,10 @@ export function AppLayout({ children }) {
               <span>{label}</span>
             </NavLink>
           ))}
+          <button className="nav-link nav-button" onClick={handleLogout} type="button">
+            <LogOut size={18} aria-hidden="true" />
+            <span>Logout</span>
+          </button>
         </nav>
       </aside>
       <main className="main-content">{children}</main>
