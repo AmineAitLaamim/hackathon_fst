@@ -3,5 +3,7 @@ backend/__pycache__/
 backend/config/__pycache__/
 *.py[cod]
 db.sqlite3
+frontend/dist/
+frontend/node_modules/
 
 marrakech-project-tasks.md

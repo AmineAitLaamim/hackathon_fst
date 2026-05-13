@@ -14,7 +14,6 @@ button,
 input,
 select,
 textarea {
-  
   font: inherit;
 }
 
@@ -34,7 +33,7 @@ a {
   padding: 24px;
   background:
     linear-gradient(rgba(23, 26, 31, 0.46), rgba(23, 26, 31, 0.46)),
-    url("../../assets/big-logo.png");
+    url("/big-logo.png");
   background-position: center;
   background-size: cover;
 }
