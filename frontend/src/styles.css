@@ -483,6 +483,32 @@ a {
   max-width: 72ch;
 }
 
+.active-session-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #20262f;
+  color: #fff;
+  font-weight: 800;
+}
+
+.status-pill {
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #ece4d8;
+  color: #53606d;
+  font-weight: 800;
+  font-size: 0.82rem;
+}
+
+.status-pill.live {
+  background: #d6533f;
+  color: #fff;
+}
+
 .list-row p {
   margin: 0;
 }

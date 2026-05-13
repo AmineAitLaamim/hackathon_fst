@@ -230,7 +230,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - Merge by `tour_id` to build preview cards (tour name, sharing friend, tour preview)
 - Actions: accept / decline → `PATCH /api/invitations/:inviteId`
 
-### `/groups`
+### `/groups` — Done
 - List of sessions (host or member) — status: `en cours / terminé`
 - Quick access to active session
 - Secondary CTA: create session → `POST /api/group-tours { tour_id }`
