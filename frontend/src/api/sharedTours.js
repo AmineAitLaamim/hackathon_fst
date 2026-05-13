@@ -36,3 +36,8 @@ export async function cloneSharedTour(shareId) {
   const response = await apiClient.post(`/shared-tours/${shareId}/use`);
   return response.data;
 }
+
+export async function personalizeSharedTour(shareId, payload) {
+  const response = await apiClient.post(`/shared-tours/${shareId}/personalize`, payload);
+  return response.data;
+}

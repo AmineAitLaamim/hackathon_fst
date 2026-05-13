@@ -213,7 +213,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
   ```
 - Actions: submit / update / delete rating · clone (`POST /use`) · navigate to personalize
 
-### `/tours/personalize/:shareId`
+### `/tours/personalize/:shareId` — Done
 - Dedicated page (not a modal) — extra input fields + AI loader
 - `POST /api/shared-tours/:shareId/personalize` → **store returned `tour_id` in local state**
 - Confirm: `PATCH /api/tours/:id` `{ status: 'published' }` using stored `tour_id`
