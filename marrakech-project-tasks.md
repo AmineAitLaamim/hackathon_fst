@@ -93,7 +93,7 @@ A tourism application for Marrakech that lets users:
 | GET | `/api/friends` | List accepted friends |
 | GET | `/api/friends/requests` | `?type=incoming\|outgoing` — `@action(detail=False)` |
 
-### Invitations *(dedicated viewset — avoids DRF nested routing issues)*
+### Invitations (DONE) *(dedicated viewset — avoids DRF nested routing issues)*
 | Method | Route | Notes |
 |--------|-------|-------|
 | GET | `/api/invitations` | Pending invitations received |
