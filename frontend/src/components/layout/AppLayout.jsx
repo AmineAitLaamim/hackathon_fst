@@ -1,7 +1,11 @@
-import { Bell, Compass, Mail, Users, MapPinned } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { Bell, Compass, LogOut, Mail, MapPinned, Route, Sparkles, UserRound, Users } from "lucide-react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../../features/auth/useAuth.js";
 
 const navItems = [
+  { to: "/generate", label: "Generate", icon: Sparkles },
+  { to: "/tours", label: "Tours", icon: Route },
+  { to: "/profile", label: "Profile", icon: UserRound },
   { to: "/explore", label: "Explore", icon: Compass },
   { to: "/friends", label: "Friends", icon: Users },
   { to: "/invitations", label: "Invitations", icon: Mail },
@@ -10,6 +14,14 @@ const navItems = [
 ];
 
 export function AppLayout({ children }) {
+  const navigate = useNavigate();
+  const { logout, user } = useAuth();
+
+  async function handleLogout() {
+    await logout();
+    navigate("/login", { replace: true });
+  }
+
   return (
     <div className="app-shell">
       <aside className="sidebar">
@@ -22,8 +34,17 @@ export function AppLayout({ children }) {
             </NavLink>
           ))}
         </nav>
+        <div className="sidebar-user">
+          <span>{user?.full_name || user?.name || user?.email || "Traveler"}</span>
+          <button className="nav-link logout-link" type="button" onClick={handleLogout}>
+            <LogOut size={18} aria-hidden="true" />
+            <span>Logout</span>
+          </button>
+        </div>
       </aside>
       <main className="main-content">{children}</main>
     </div>
   );
 }
+
+export default AppLayout;
