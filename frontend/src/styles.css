@@ -14,6 +14,7 @@ button,
 input,
 select,
 textarea {
+  
   font: inherit;
 }
 
@@ -346,6 +347,22 @@ a {
   background: #fff0ed;
 }
 
+.success-box {
+  border: 1px solid #a6d6c2;
+  border-radius: 7px;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  color: #155a4f;
+  background: #eefaf4;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
 .progress-track {
   height: 8px;
   overflow: hidden;
@@ -439,6 +456,10 @@ a {
   }
 
   .tour-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-grid {
     grid-template-columns: 1fr;
   }
 }

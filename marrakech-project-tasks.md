@@ -182,7 +182,7 @@ Implement at app initialisation. Access token lives **in memory only** — never
 - Author-only actions: edit, delete (confirm), share publicly, modify share, unpublish, share with friends, start group session
 - "Start group session" here is the **primary entry point** — `tour_id` is already in context
 
-### `/profile`
+### `/profile` — DONE
 - Edit name/photo → `PATCH /api/auth/me`
 - Edit interests → `PATCH /api/users/:id/interests`
 - Edit health → `PATCH /api/users/:id/health`
