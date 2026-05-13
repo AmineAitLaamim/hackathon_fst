@@ -49,6 +49,11 @@ INSTALLED_APPS = [
     'accounts',
     'tours',
     'places',
+    'friends',
+    'invitations',
+    'shared_tours',
+    'group_tours',
+    'notifications',
 ]
 
 MIDDLEWARE = [

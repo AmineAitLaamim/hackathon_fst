@@ -23,4 +23,9 @@ urlpatterns = [
     path('api/users/', include('accounts.urls_users')),
     path('api/tours/', include('tours.urls')),
     path('api/places/', include('places.urls')),
+    path('api/friends/', include('friends.urls')),
+    path('api/invitations/', include('invitations.urls')),
+    path('api/shared-tours/', include('shared_tours.urls')),
+    path('api/group-tours/', include('group_tours.urls')),
+    path('api/notifications/', include('notifications.urls')),
 ]
